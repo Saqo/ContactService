@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Employees" Class="LinqContactDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=SPARKO-ПК\ENTERPRISE;Initial Catalog=Employees;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="EmployeesConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Contacts" Member="Contacts">
+    <Type Name="Contacts">
+      <Column Name="ContactID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ContactFirstName" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="ContactLastName" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="ContactPatronymic" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="ContactTelephoneID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ContactAdress" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Association Name="Telephones_Contacts" Member="Telephones" ThisKey="ContactTelephoneID" OtherKey="TelephoneID" Type="Telephones" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Telephones" Member="Telephones">
+    <Type Name="Telephones">
+      <Column Name="TelephoneID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TelephoneNumber" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Association Name="Telephones_Contacts" Member="Contacts" ThisKey="TelephoneID" OtherKey="ContactTelephoneID" Type="Contacts" />
+    </Type>
+  </Table>
+</Database>

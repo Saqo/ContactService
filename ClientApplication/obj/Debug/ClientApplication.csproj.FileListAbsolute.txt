@@ -1,0 +1,12 @@
+c:\users\sparko\documents\visual studio 2013\Projects\ContactsService\ClientApplication\bin\ClientApplication.dll.config
+c:\users\sparko\documents\visual studio 2013\Projects\ContactsService\ClientApplication\bin\ClientApplication.dll
+c:\users\sparko\documents\visual studio 2013\Projects\ContactsService\ClientApplication\bin\ClientApplication.pdb
+c:\users\sparko\documents\visual studio 2013\Projects\ContactsService\ClientApplication\obj\Debug\ClientApplication.dll
+c:\users\sparko\documents\visual studio 2013\Projects\ContactsService\ClientApplication\obj\Debug\ClientApplication.pdb
+c:\users\sparko\documents\visual studio 2013\Projects\ContactsService\ClientApplication\obj\Debug\ClientApplication.csprojResolveAssemblyReference.cache
+C:\Users\Sparko\Documents\ContactService\ClientApplication\bin\ClientApplication.dll.config
+C:\Users\Sparko\Documents\ContactService\ClientApplication\bin\ClientApplication.dll
+C:\Users\Sparko\Documents\ContactService\ClientApplication\bin\ClientApplication.pdb
+C:\Users\Sparko\Documents\ContactService\ClientApplication\obj\Debug\ClientApplication.csprojResolveAssemblyReference.cache
+C:\Users\Sparko\Documents\ContactService\ClientApplication\obj\Debug\ClientApplication.dll
+C:\Users\Sparko\Documents\ContactService\ClientApplication\obj\Debug\ClientApplication.pdb

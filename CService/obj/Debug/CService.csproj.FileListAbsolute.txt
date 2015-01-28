@@ -1,0 +1,7 @@
+c:\users\sparko\documents\visual studio 2013\Projects\ContactsService\CService\bin\CService.dll.config
+c:\users\sparko\documents\visual studio 2013\Projects\ContactsService\CService\bin\CService.dll
+c:\users\sparko\documents\visual studio 2013\Projects\ContactsService\CService\bin\CService.pdb
+c:\users\sparko\documents\visual studio 2013\Projects\ContactsService\CService\bin\Newtonsoft.Json.dll
+c:\users\sparko\documents\visual studio 2013\Projects\ContactsService\CService\obj\Debug\CService.dll
+c:\users\sparko\documents\visual studio 2013\Projects\ContactsService\CService\obj\Debug\CService.pdb
+c:\users\sparko\documents\visual studio 2013\Projects\ContactsService\CService\obj\Debug\CService.csprojResolveAssemblyReference.cache

@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <style>
+        td, th {
+            border: 1px solid black;
+            text-align: center;
+            padding: 5px;
+        }
+
+        table {
+            width: 1000px;
+            margin-left: 50%;
+            position: absolute;
+            left: -500px;
+            border-collapse: collapse;
+        }
+
+        th {
+            background: lightgrey;
+        }
+    </style>
+</head>
+<body>
+    <table id="tblContacts"></table>
+    <script src="/jquery-1.4.1.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(ajax);
+
+        setInterval(ajax, seconds(60));
+
+        function seconds(sec) {
+            return sec * 1000;
+        }
+
+        function ajax() {
+            $.ajax({
+                type: "GET",
+                contentType: "text/plain; charset=utf-8",
+                crossDomain: true,
+                url: "http://localhost:10044/ContactsService.svc/GetContacts",
+                dataType: "text",
+                success: getContacts.bind(this),
+                error: function (data) {
+                    alert(data.responseText);
+                }
+            });
+        }
+
+        function getContacts(arrayOfContacts) {
+            var contacts = ($.parseJSON(arrayOfContacts))['d'];
+            var isThInTable = false;
+            var table = document.getElementById("tblContacts");
+            var headersTr = document.createElement("tr");
+            table.innerHTML = "";
+            for (var i = 0; i < contacts.length; i++) {
+                var tr = document.createElement("tr");
+                for (var key in contacts[i]) {
+                    var td = document.createElement("td");
+                    if (key != "__type") {
+                        if (!isThInTable) {
+                            var th = document.createElement("th");
+                            th.innerHTML = key;
+                            headersTr.appendChild(th);
+                            table.appendChild(headersTr);
+                        }
+                        if (key != "TelephoneNumber") {
+                            td.innerHTML = (contacts[i])[key];
+                        } else {
+                            var phoneNumbers = ((contacts[i])[key]).split(/[^0-9]/);
+                            for (var j = 0; j < phoneNumbers.length; j++) {
+                                if (phoneNumbers[j] != "") {
+                                    var numbs = phoneNumbers[j].split('');
+                                    var phoneNumbWithPattern = '+7' + '(' + numbs[1] + numbs[2] + numbs[3] + ')' + numbs[4] + numbs[5] + numbs[6] + '-' + numbs[7] + numbs[8] + '-' + numbs[9] + numbs[10];
+                                    td.innerHTML += phoneNumbWithPattern + '<br>';
+                                }
+                            }
+                        }
+                        tr.appendChild(td);
+                    }
+                }
+                isThInTable = true;
+                table.appendChild(tr);
+            }
+        }
+    </script>
+</body>
+</html>
